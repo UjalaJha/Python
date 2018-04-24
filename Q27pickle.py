@@ -2,11 +2,10 @@ import pickle
 
 class Emp:
     def __init__(self,idt,name):
-        self.id=idt
+        self.idt=idt
         self.name=name
     def display(self):
-        print(name)
-        print(idt)
+        print(name,idt)
         
 
 # take user input to take the amount of data
@@ -16,16 +15,12 @@ n = int(input('Enter the number of data : '))
 
 # take input of the data
 for i in range(n):
-    idt = int(input('Enter id'))
-    name=input('Enter name')
-    
-
-
-e=Emp(idt,name)
-
-
-# dump information to that file
-pickle.dump(e,f)
+    idt = int(input('Enter id : '))
+    name=input('Enter name : ')
+    e=Emp(idt,name)
+    e.display()
+    # dump information to that file
+    pickle.dump(e,f)
 
 # close the file
 f.close()
